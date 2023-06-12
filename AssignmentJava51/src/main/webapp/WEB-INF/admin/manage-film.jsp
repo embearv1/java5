@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="mb-3">
-	You Want Add New Film? <a href="<c:url value='/admin/view-add-video'/>"
+	You Want Add New Film? <a href="<c:url value='/admin/add-video'/>"
 		class="btn btn-success">Add new Film</a>
 </div>
 <div class="row border border-primary">
@@ -28,9 +28,8 @@
 				for="form4Example1">Href</label>
 		</div>
 		<div class="form-outline mb-4 mt-2">
-			<input type="text" id="form4Example1" class="form-control"
-				name="poster1" required="required" /> <label class="form-label"
-				for="form4Example1">Poster</label>
+			<input type="file" name="posterVd" class="form-control" /> <label
+				class="form-label">Poster</label>
 		</div>
 		<!-- Message input -->
 		<div class="form-outline mb-4">
@@ -40,7 +39,8 @@
 		</div>
 
 		<!-- Submit button -->
-		<button type="submit" class="btn btn-primary btn-block mb-4">Update</button>
+		<button formaction="/admin/update-video/${v.id}" type="submit"
+			class="btn btn-primary btn-block mb-4">Update</button>
 	</form>
 </div>
 <div class="row mt-2">
@@ -76,11 +76,11 @@
 					<td>${x.description}</td>
 					<td>${x.active}</td>
 					<td><a
-						href="<c:url value='/admin/view-update-video'/>?id=${x.id}"
+						href="<c:url value='/admin/view-update-video'/>/${x.id}"
 						class="edit" data-toggle="modal"><i class="fa fa-pencil"
 							aria-hidden="true">Edit</i></a> <br> <a
-						href="<c:url value='/admin/delete-video'/>?id=${x.id}"
-						class="delete" data-toggle="modal"><i class="fa fa-trash-o"
+						href="<c:url value='/admin/delete-video'/>/${x.id}" class="delete"
+						data-toggle="modal"><i class="fa fa-trash-o"
 							aria-hidden="true"></i>Dele</a></td>
 				</tr>
 			</c:forEach>

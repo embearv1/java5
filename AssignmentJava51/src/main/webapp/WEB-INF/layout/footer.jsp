@@ -16,10 +16,9 @@
           <div class="col-lg-6">
             <div class="footer__nav">
               <ul>
-               <li class="active"><a href="<c:url value='/video/home'/>">Homepage</a></li>
-                  <li><a href="<c:url value='/video/all-video'/>">Anime</a></li>
-                  <li><a href="<c:url value='/video/blog'/>">Our Blog</a></li>
-                <li><a href="#">My Account</a></li>
+               <li class="active"><a href="<c:url value='/video/home'/>"><s:message code="label.home.home"/></a></li>
+                  <li><a href="<c:url value='/video/all-video'/>"><s:message code="label.home.video"/></a></li>
+                  <li><a href="<c:url value='/video/blog'/>"><s:message code="label.home.blog"/></a></li>
               </ul>
             </div>
           </div>

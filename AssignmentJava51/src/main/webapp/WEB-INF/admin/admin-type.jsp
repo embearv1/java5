@@ -16,9 +16,9 @@
 
 
 		<!-- Submit button -->
-		<button onclick="addTypeSuccsess()" formaction="<c:url value='/type/add-type'/>" type="submit"
+		<button formaction="<c:url value='/admin/type/add-type'/>" type="submit"
 			class="btn btn-primary btn-block mb-4">Add</button>
-		<button formaction="<c:url value='/type/edit-type'/>/${type.id}"
+		<button formaction="<c:url value='/admin/type/edit-type'/>/${type.id}"
 			type="submit" class="btn btn-primary btn-block mb-4">Update</button>
 	</form>
 </div>
@@ -34,21 +34,26 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${all_type}" var="x">
+			<c:forEach items="${list}" var="x">
 				<tr>
 					<th scope="row">${x.id}</th>
 					<td>${x.name}</td>
 					<td>${x.active==true?'Active':'Non-Active'}</td>
 					<td><a
-						href="<c:url value='/type/view-edit-type' />?id=${x.id}"
+						href="<c:url value='/admin/type/view-edit-type' />/${x.id}"
 						class="edit" data-toggle="modal"><i class="fa fa-pencil"
 							aria-hidden="true">Edit</i></a> <br> <a
-						href="<c:url value='/type/delete-type' />?id=${x.id}"
+						href="<c:url value='/admin/type/delete-type' />/${x.id}"
 						class="delete" data-toggle="modal"><i class="fa fa-trash-o"
 							aria-hidden="true"></i>Dele</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	<div class="product__pagination text-center">
+		<c:forEach begin="1" end="${totalPage}" varStatus="i">
+			<a href="/admin/type?pageNum=${i.index}" class="current-page">${i.index}</a>
+		</c:forEach>
+	</div>
 
 </div>

@@ -7,6 +7,9 @@
 	</div>
 </div>
 <div class="row">
+<h3 class="text-white bg-danger">Total Video:</h3><h2 class="">${totalVid}</h2>
+</div>
+<div class="row">
 	<h3 class="text-white bg-danger">Most View Video</h3>
 		<table class="table table-success table-hover">
 			<thead>

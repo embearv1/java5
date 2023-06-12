@@ -17,7 +17,11 @@ public interface VideoRepository extends JpaRepository<Video, Integer> {
 
 	List<Video> findTop4ByActiveOrderByIdDesc(boolean active);
 
+	List<Video> findByActive(boolean active);
+	
 	Page<Video> findAllByActive(boolean active, Pageable pageable);
 	
 	Page<Video> findAllByTypeAndActive(Type_Video type,boolean active,Pageable pageable);
+	
+	long count();
 }
